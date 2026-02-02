@@ -8,6 +8,8 @@ Utiliza la API de [PokeApi](https://pokeapi.co/) para obtener pokemons.
 
 Usa [Tailwind CSS](https://tailwindcss.com/) como framework CSS.
 
+El diseño de los componentes se realizó con [shadcn/ui](https://ui.shadcn.com/).
+
 También se emplea [Zod](https://zod.dev/) como validador de esquemas.
 
 ## Aspectos analizados
@@ -37,8 +39,13 @@ Iniciar la aplicación con `npm run dev`.
 ## Instalaciones de paquetes necesarios
 
 Tailwind CSS se instala con:
- ```bash
+```bash
 npm install tailwindcss @tailwindcss/vite
 ```
 
 Los avisos sobre las reglas en Visual Studio Code se pueden eliminar con la extensión [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+
+Para añadir nuevos componentes Shadcn-ui al proyecto
+```bash
+npx shadcn@latest add
+```
