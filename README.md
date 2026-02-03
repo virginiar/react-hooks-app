@@ -36,6 +36,8 @@ Descargar las dependencias con `npm install`.
 
 Iniciar la aplicación con `npm run dev`.
 
+Las aplicaciones están agrupadas por hooks en carpetas. Para alternar entre ellas, quitar el comentario correspondiente en `main.tsx`.
+
 ## Instalaciones de paquetes necesarios
 
 Tailwind CSS se instala con:
@@ -48,4 +50,9 @@ Los avisos sobre las reglas en Visual Studio Code se pueden eliminar con la exte
 Para añadir nuevos componentes Shadcn-ui al proyecto
 ```bash
 npx shadcn@latest add
+```
+
+Zod se instala con el comando:
+```bash
+npm install zod
 ```
