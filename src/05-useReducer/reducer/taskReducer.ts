@@ -16,6 +16,15 @@ export type TaskAction =
     | { type: 'TOGGLE_TODO'; payload: number; }
     | { type: 'DELETE_TODO'; payload: number; };
 
+export const getTasksInitialState = (): TaskState => {
+    return {
+        todos: [],
+        completed: 0,
+        pending: 0,
+        length: 0,
+    };
+};
+
 // Reducer: función que retorna siempre un nuevo estado
 // Argumentos: Estado actual y una acción
 export const taskReducer = (
