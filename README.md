@@ -56,3 +56,10 @@ Zod se instala con el comando:
 ```bash
 npm install zod
 ```
+
+Las animaciones de confetti son de [Canvas-Confetti](https://www.npmjs.com/package/canvas-confetti).
+Al instalarlo aparece un error de tipado TypeScript que requiere agregar una nueva dependencia:
+```bash
+npm install canvas-confetti
+npm i --save-dev @types/canvas-confetti
+```
