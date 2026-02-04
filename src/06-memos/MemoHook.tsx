@@ -1,0 +1,53 @@
+// La alternativa actual es usar React Compiler
+
+import { useCallback, useState } from "react";
+
+import { MyTitle } from "./ui/MyTitle";
+import { MySubtitle } from "./ui/MySubtitle";
+
+// No hace falta memorizarla porque está fuera del componente
+// y no se re-renderiza
+/* const handleMyApiCall = (myValue: string) => {
+  console.log('Llamar a mi API ' + myValue);
+}; */
+
+export const MemoHook = () => {
+  const [title, setTitle] = useState("Hola");
+  const [subtitle, setSubtitle] = useState("Mundo");
+
+  // useCallback memoriza funciones, evitando la 
+  // re-renderización del subtítulo al cambiar el título
+  const handleMyAPICall = useCallback(() => {
+    console.log("Llamar a mi API - ", subtitle);
+  }, [subtitle]);
+
+
+  return (
+    <div className="bg-gradient flex flex-col gap-4">
+      <h1 className="text-2xl font-thin text-white">Memo App</h1>
+
+      <MyTitle title={title} />
+      <MySubtitle subtitle={subtitle} callMyAPI={handleMyAPICall}/>
+
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+        onClick={() => {
+          setTitle("Hello " + new Date().getTime());
+        }}
+      >
+        Cambiar título
+      </button>
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+        /* onClick={() => {
+          setSubtitle("World " + new Date().getTime());
+        }} */
+        onClick={() => {
+          setSubtitle("World");
+        }}
+      >
+        Cambiar subtítulo
+      </button>
+    </div>
+  );
+};
