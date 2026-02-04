@@ -63,3 +63,8 @@ Al instalarlo aparece un error de tipado TypeScript que requiere agregar una nue
 npm install canvas-confetti
 npm i --save-dev @types/canvas-confetti
 ```
+
+Los toast están creados con [Sonner](https://sonner.emilkowal.ski/).
+```bash
+npm install sonner
+```
