@@ -12,6 +12,8 @@ El diseño de los componentes se realizó con [shadcn/ui](https://ui.shadcn.com/
 
 También se emplea [Zod](https://zod.dev/) como validador de esquemas.
 
+El enrutado se efectúa con [React Router](https://reactrouter.com/)
+
 ## Aspectos analizados
 
 En este proyecto se abordan hooks tradicionales de React y hooks personalizados:
@@ -67,4 +69,9 @@ npm i --save-dev @types/canvas-confetti
 Los toast están creados con [Sonner](https://sonner.emilkowal.ski/).
 ```bash
 npm install sonner
+```
+
+Para instalar React Router en modo data:
+```bash
+npm i react-router
 ```
