@@ -1,5 +1,5 @@
 import { createContext, useState, type PropsWithChildren } from "react";
-import type { User } from "../data/user-mock.data";
+import { users, type User } from "../data/user-mock.data";
 
 // interface UserContextProps {
 //   children: React.ReactNode;
@@ -17,7 +17,7 @@ interface UserContextProps {
   logout: () => void;
 }
 
-const UserContext = createContext({} as UserContextProps);
+export const UserContext = createContext({} as UserContextProps);
 
 // HOC: High Order Component
 export const UserContextProvider = ({ children }: PropsWithChildren) => {
@@ -25,11 +25,27 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<User | null>(null);
 
   const handleLogin = (userId: number) => {
-    console.log(userId);
+    const user = users.find((user) => user.id === userId);
+
+    if (!user) {
+      console.log(`Usuario no encontrado: ${userId}`);
+      setUser(null);
+      setAuthStatus("not-authenticated");
+      return false;
+    }
+
+    setUser(user);
+    setAuthStatus("authenticated");
+    // localStorage.setItem("userId", userId.toString());
     return true;
   };
 
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    console.log("logout");
+    setAuthStatus("not-authenticated");
+    setUser(null);
+    // localStorage.removeItem("userId");
+  };
 
   return (
     <UserContext
